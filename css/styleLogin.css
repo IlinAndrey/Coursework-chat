@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Roboto', sans-serif;
+}
+.wrapmain{
+    background: #333;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    width: 400px;
+    min-height: 600px;
+    background: #1f1f1f;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.28);
+	-moz-box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.28);
+	box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.28);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #e6e6e6;
+}
+.formregistration{
+    position: relative;
+    /* display: flex; */
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 20px;
+}
+input[type = text], input[type = password]{
+    padding: 9px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #aaaaaa;
+    font: inherit;
+    background: #1f1f1f;
+    outline: none;
+    color: #e6e6e6;
+    transition: 0.5s ease-in-out;
+}
+input[type = text]:focus, input[type = password]:focus{
+    border-bottom: 2px solid #79479b;
+}
+
+input[type = submit]{
+    width: 150px;
+    height: 50px;
+    background-color: #1f1f1f;
+    border: none;
+    border-radius: 30px;
+    color: #e6e6e6;
+    font: inherit;
+    cursor: pointer;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.28);
+	-moz-box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.28);
+	box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.28);
+    transition: 0.5s ease-in-out;
+}
+
+input[type = submit]:hover{
+    color: #79479b;
+    background-color: #111111;
+}
+.register{
+    color: #79479b;
+    text-decoration: none;
+}
+
+.formregistration .fa{
+    position: absolute;
+    top: 70%;
+    right: -10%;
+    display: none;
+}
+
+.fa-times{
+    color: #b11616;
+}
+
+.fa-check{
+    color: #169616;
+}
+#error{
+    color: #b11616;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+#noterror{
+    color: #169616;
+    margin-bottom: 20px;
+    /* margin-top: 50px; */
+}
+.outer{
+    margin-bottom: 40px;
+}
+input{
+    margin-top: 20px;
+}
