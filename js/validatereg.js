@@ -1,64 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/styleLogin.css">
-    <script src="https://use.fontawesome.com/8aab69e184.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
-<body>
-    <div class="wrapmain">
-        <form class="card" onsubmit="return validate()">
-            <p id="error"></p>
-            <p id="noterror"></p>
-            <h1>Registration</h1>
-            <div class="formregistration">
-                <label for="username">Your name</label><br>
-                <input class="input_e" type="text" name="username" placeholder="Username" id="username">
-                <i class="fa fa-times n_times" aria-hidden="true"></i>
-                <i class="fa fa-check n_check" aria-hidden="true"></i>
-            </div>
-            <div class="formregistration">
-                <label for="email">Your Email</label><br>
-                <input class="input_e" type="text" name="email" placeholder="Email" id="email">
-                <i class="fa fa-times u_times" aria-hidden="true"></i>
-                <i class="fa fa-check u_check" aria-hidden="true"></i>
-            </div>
-            <div class="formregistration">
-                <label for="password">Your Password</label><br>
-                <input class="input_e" type="password" name="password" placeholder="Password" id="pass">
-                <i class="fa fa-times p_times" aria-hidden="true"></i>
-                <i class="fa fa-check p_check" aria-hidden="true"></i>
-            </div>
-            <div class="formregistration">
-                <label for="rpassword">Please repeat password</label><br>
-                <input class="input_e" type="password" name="rpassword" placeholder="Repeat password" id="rpass">
-                <i class="fa fa-times r_times" aria-hidden="true"></i>
-                <i class="fa fa-check r_check" aria-hidden="true"></i>
-            </div>
-            <div class="formregistration">
-                <label for="img">Select image</label><br>
-                <input class="input_e" type="file" name="fileUpload" onchange="validate_fileupload(this.value);" id="img">
-                <i class="fa fa-times i_times" aria-hidden="true"></i>
-                <i class="fa fa-check i_check" aria-hidden="true"></i>
-            </div>
-            <div class="formregistration">
-                <a href="chat_page.html"><input type="submit" name="login-btn" id="Login"></a>
-            </div>
-            <!-- <a href="chat_page.html"><button type="submit" name="login-btn" id="Login">Login</button></a> -->
-            <span class="outer">Already have a account? <a href="index.html" class="register">Login</a></span>
-        </form>
-    </div>
-    <script>
-        var user = document.querySelector('#username');
+var user = document.querySelector('#username');
         user.addEventListener('keyup', function(){
             var n_times = document.querySelector('.n_times');
             var n_check = document.querySelector('.n_check');
             if (user.value.length == 0 || user.value.length < 3) {
                 email.style.borderBottom = '2px solid #b11616';
-                u_times.style.display = 'block';
-                u_check.style.display = 'none';
+                n_times.style.display = 'block';
+                n_check.style.display = 'none';
                 return false;
             }else{
                 user.style.borderBottom = '2px solid #169616';
@@ -118,7 +65,7 @@
 
         function validate_fileupload(fileName)
         {
-            var allowed_extensions = new Array("jpg","png","gif");
+            var allowed_extensions = new Array("jpg","png","jpeg");
             var file_extension = fileName.split('.').pop().toLowerCase(); // split function will split the filename by dot(.), and pop function will pop the last element from the array which will give you the extension as well. If there will be no extension then it will return the filename.
             var i_times = document.querySelector('.i_times');
             var i_check = document.querySelector('.i_check');
@@ -147,6 +94,3 @@
                 return false;
             }
         };
-    </script>
-</body>
-</html>

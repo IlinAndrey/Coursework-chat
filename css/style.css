@@ -10,8 +10,8 @@ body {
 	background: #212121;
 	font-family:'Roboto', sans-serif;
 	font-size: 16px;
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    align-items: center; */
 }
 
 a {
@@ -107,7 +107,7 @@ nav button > span {
 	background: #FFF;
 }
 
-.profile .image {
+/* .profile .image {
 	width: 140px;
 	height: 140px;
 	background: #FFF url(https://thispersondoesnotexist.com/image) no-repeat center;
@@ -115,7 +115,7 @@ nav button > span {
 	border-radius: 100%;
 	float: left;
 	margin-right: 30px;
-}
+} */
 
 .side {
 	width: auto;
@@ -247,6 +247,7 @@ nav button > span {
 	background: #212121;
 	border-right: 1px solid rgb(53, 53, 53);
     border-left: 1px solid rgb(53, 53, 53);
+	/* margin-left: 1%; */
 }
 
 header {
@@ -260,6 +261,7 @@ header {
 	width: 32px;
 	height: 32px;
 	margin: 20px 15px;
+	margin-left: 9px;
 	margin-bottom: 0px;
 	color: #212121;
 	cursor: pointer;
@@ -333,22 +335,36 @@ header {
 .subnav ul li i{
 	padding-right: 15px;
 }
-
 .searchChats {
-	width: calc(100% - 85px);
+	position: absolute;
+	width: calc(100% - 85px); 
 	height: 40px;
 	background: #2c2c2c;
-	float: left;
-	padding: 8px;
+	/* float: left; */
+	padding: 3px;
 	margin-top: 14px;
 	border: none;
 	border-radius: 20px;
 	font-size: 14px;
 	font-weight: 600;
-    transition: 0.5s ease-in-out;
-	outline: n;
+    transition: 0.2s ease-in-out;
+	outline: none;
+	color: #444;
+	transform: translate(-3%);
 }
-
+.search{
+	top: 5px;
+	position: relative;
+	bottom: 10px;
+}
+.fa-search{
+	position: relative;
+	color: #e6e6e6;
+	padding-right: 3px;
+	float: right;
+	transform: translate(-50%, 150%);
+	cursor: pointer;
+}
 .searchChats:focus {
 	color: #444;
     border: 3px solid #79479b;
@@ -378,13 +394,13 @@ header {
 
 .chatButton:hover {
 	color: #a0a0a0;
-	background: #2c2c2c;
+	background: #6e6e6e;
     border-radius: 10px;
 }
 
 .active, .active:hover {
 	color: #FFF;
-	background: #79479b; 
+	background: #494949; 
     border-radius: 10px;
 }
 
@@ -537,7 +553,9 @@ div[class~="onTop"] > .count {
 
 .rightPanel {
 	float: left;
-	width: calc(100% - 471px);
+	/* max-width: calc(100% - 471px); */
+	/* max-width: 100%; */
+	width: calc(100% - 350px);
 	height: 100vh;
 	background: #0f0f0f;
     border-right: 1px solid #3b3b3b;
@@ -645,8 +663,8 @@ div[class~="onTop"] > .count {
 	margin: 20px 15px;
 	margin-bottom: 0px;
 	background: #79479b;
-	border-radius: 20px;
-	clear: both;
+	border-radius: 10px;
+ 	clear: both;
     /* height: auto; */
     font-weight: 600;
 
@@ -659,10 +677,13 @@ div[class~="onTop"] > .count {
 .msg .timestamp {
 	display: block;
 	position: absolute;
+	font-weight: 100;
+	font-size: 12px;
 	right: 10px;
 	bottom: 6px;
 	color: #AAA;
 	user-select: none;
+
 }
 
 .messageReceived {
@@ -699,6 +720,7 @@ div[class~="onTop"] > .count {
 	float: left;
 	background: #0f0f0f;
     margin-left: 5%;
+	padding-top: 10px;
 }
 .replyBar input{
     background: #2c2c2c;
@@ -986,16 +1008,32 @@ div[class~="onTop"] > .count {
 .mainSettings li:hover{
 	background: rgb(26, 26, 26);
 }
+@media screen and (min-width: 3000px) {	
+	.rightPanel {
+		width: calc(100% - 350px);
+	}
+}
+@media screen and (max-width: 1680px) {	
+	.rightPanel {
+		min-width: calc(100% - 350px);
+	}
+}
 
 @media screen and (max-width: 1180px) {	
 	.config {
 		width: 60%;
+	}
+	.rightPanel {
+		min-width: calc(100% - 350px);
 	}
 }
 
 @media screen and (max-width: 980px) {
 	.config {
 		width: 90%;
+	}
+	.rightPanel {
+		min-width: calc(100% - 350px);
 	}
 }
 
