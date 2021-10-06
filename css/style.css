@@ -336,8 +336,8 @@ header {
 	padding-right: 15px;
 }
 .searchChats {
-	position: absolute;
-	width: calc(100% - 85px); 
+	position: relative;
+	width: calc(100% - 60px); 
 	height: 40px;
 	background: #2c2c2c;
 	/* float: left; */
@@ -349,12 +349,14 @@ header {
 	font-weight: 600;
     transition: 0.2s ease-in-out;
 	outline: none;
-	color: #444;
+	color: rgb(126, 126, 126);
 	transform: translate(-3%);
+	text-align: center;
 }
 .search{
+	padding-top: 5px;
 	top: 5px;
-	position: relative;
+	/* position: absolute; */
 	bottom: 10px;
 }
 .fa-search{
@@ -367,7 +369,7 @@ header {
 }
 .searchChats:focus {
 	color: #444;
-    border: 3px solid #79479b;
+    border: 1px solid #79479b;
 }
 
 .chats {
@@ -526,6 +528,7 @@ div[class~="onTop"] > .count {
 }
 
 .status .count {
+	font-size: 12px;
     margin-bottom: 15px;
 	position: absolute;
 	right: 49px;
@@ -541,7 +544,7 @@ div[class~="onTop"] > .count {
 .status .date {
 	position: absolute;
 	right: 12px;
-	top: 12px;
+	/* top: 12px; */
 	font-size: 12px;
 }
 
@@ -649,16 +652,16 @@ div[class~="onTop"] > .count {
 }
 
 .msg {
-    display: flex;
+    /* display: flex; */
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
 	position: relative;
 	max-width: 200px;
-	min-width: 70px;
+	min-width: 50px;
 	max-width: 50%;
-    min-height: 50px;
-	padding: 10px;
+    min-height: 20px;
+	padding: 10px 10px 10px 10px;
 	/* padding-bottom: 35px; */
 	margin: 20px 15px;
 	margin-bottom: 0px;
@@ -690,16 +693,22 @@ div[class~="onTop"] > .count {
 	float: left;
 	background: #212121;
     color: #fefefe;
+	font-weight: 100;
+	font-size: 14px;
+	height: 30px;
 }
 
 .messageSent {
 	float: right;
 	background: #79479b;
     color: #fefefe;
+	font-weight: 100;
+	font-size: 14px;
 }
 .messageSent i{
     float: right;
     bottom: 0;
+	bottom: 0;
 }
 
 .messageSent > .timestamp, .messageSent > .readStatus {
@@ -757,7 +766,8 @@ div[class~="onTop"] > .count {
 	float: left;
 	height: 70px;
 	padding: 0px 8px;
-	font-size: 16px;
+	font-size: 14px;
+	font-weight: 100;
 }
 
 .replyBar .otherTools {
@@ -1084,7 +1094,7 @@ div[class~="onTop"] > .count {
 	.chatButton > .name, 
 	.chatButton > .message,
 	.chatButton > .status,
-    .chat_middle {
+    .chat_middle{
 		display: none;
 	}
 }
@@ -1121,7 +1131,7 @@ div[class~="onTop"] > .count {
 	.chatButton > .name, 
 	.chatButton > .message,
 	.chatButton > .status,
-    .chat_middle {
+    .chat_middle{
 		display: flex;
 	}
 

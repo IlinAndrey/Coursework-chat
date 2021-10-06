@@ -6,4 +6,5 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://use.fontawesome.com/8aab69e184.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 </head>

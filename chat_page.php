@@ -76,7 +76,7 @@
 		</div>
 			<div class="search">
 				<input class="searchChats" type="search" placeholder="Search..."/>
-				<i class="fa fa-search" aria-hidden="true"></i>
+				<!-- <i class="fa fa-search" aria-hidden="true"></i> -->
 			</div>
 			<div class="subnav">
 				<ul>
@@ -93,111 +93,41 @@
 	
 	<div class="rightPanel">
 		<div class="topBar">
-		<?php 
-			include_once "php/config.php";
-			$sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
-			if(mysqli_num_rows($sql) > 0){
-				$row = mysqli_fetch_assoc($sql);
-			}
-				
-		?>
+			<?php 
+				include_once "php/config.php";
+				$user_id = mysqli_real_escape_string($conn, $_GET['user_id']);
+				$sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$user_id}");
+				if(mysqli_num_rows($sql) > 0){
+					$row = mysqli_fetch_assoc($sql);
+				}
+					
+			?>
 			<div class="leftSide">
 			<p class="chatName"><span><?php echo $row['username'] ?></span></p>
 			<p class="chatStatus"><?php echo $row['status'] ?></p>
 			</div>
 		</div>
-		
 		<div class="convHistory userBg">
-			
-			<div class="msg messageReceived">
-				Привет
-				<span class="timestamp">00:00</span>
-			</div>
-			
-			<div class="msg messageSent">
-				Привет
-				<i class="fa fa-check" aria-hidden="true"></i>
-				<span class="timestamp">00:01</span>
-			</div>
-			
-			<div class="msg messageReceived">
-				Это тестовые сообщения отправленные не через чат
-				<span class="timestamp">00:02</span>
-			</div>
-			
-			<div class="msg messageReceived">
-				А как тогда?
-				<span class="timestamp">00:02</span>
-			</div>
-			
-			<div class="msg messageSent">
-				Хороший вопрос, но через код)
-				<i class="fa fa-check" aria-hidden="true"></i>
-				<span class="timestamp">00:04</span>
-			</div>
-			<div class="msg messageSent">
-				Хороший вопрос, но через код)
-				<i class="fa fa-check" aria-hidden="true"></i>
-				<span class="timestamp">00:04</span>
-			</div>
-			<div class="msg messageSent">
-				Хороший вопрос, но через код)
-				<i class="fa fa-check" aria-hidden="true"></i>
-				<span class="timestamp">00:04</span>
-			</div>
-			<div class="msg messageSent">
-				Хороший вопрос, но через код)
-				<i class="fa fa-check" aria-hidden="true"></i>
-				<span class="timestamp">00:04</span>
-			</div>
-			<div class="msg messageSent">
-				Хороший вопрос, но через код)
-				<i class="fa fa-check" aria-hidden="true"></i>
-				<span class="timestamp">00:04</span>
-			</div>
-			<div class="msg messageSent">
-				Хороший вопрос, но через код)Хороший вопрос, но через код)Хороший вопрос, но через код)Хороший вопрос, но через код)Хороший вопрос, но через код)Хороший вопрос, но через код)Хороший вопрос, но через код)Хороший вопрос, но через код)Хороший вопрос, но через код)Хороший вопрос, но через код)Хороший вопрос, но через код)Хороший вопрос, но через код)
-				<i class="fa fa-check" aria-hidden="true"></i>
-				<span class="timestamp">00:04</span>
-			</div>
-			<div class="msg messageSent">
-				Хороший вопрос, но через код)
-				<i class="fa fa-check" aria-hidden="true"></i>
-				<span class="timestamp">00:04</span>
-			</div>
-			<div class="msg messageSent">
-				Хороший вопрос, но через код)
-				<i class="fa fa-check" aria-hidden="true"></i>
-				<span class="timestamp">00:04</span>
-			</div>
-			<div class="msg messageSent">
-				Хороший вопрос, но через код)
-				<i class="fa fa-check" aria-hidden="true"></i>
-				<span class="timestamp">00:04</span>
-			</div>
-			<div class="msg messageSent">
-				Хороший вопрос, но через код)
-				<i class="fa fa-check" aria-hidden="true"></i>
-				<span class="timestamp">00:04</span>
-			</div>
 		</div>
 		
-		<div class="replyBar">
+		<form class="replyBar">
             <div class="input_message">
                 <button class="attach">
                     <i class="fa fa-paperclip" aria-hidden="true"></i>
                 </button>
-			<input type="text" class="replyMessage" placeholder="Type your message..."/>
+			<input type="text" name="outgoing_id" value="<?php echo $_SESSION['unique_id']; ?>" hidden>
+			<input type="text" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
+			<input type="text" name="message" class="replyMessage" placeholder="Type your message..." autocomplete="off"/>
 			</div>
 			<div class="otherTools">
-				<button class="toolButtons send">
+				<button class="toolButtons send" id="sender" >
 					<i class="fa fa-paper-plane" aria-hidden="true"></i>
 				</button>
 			</div>
-		</div>
+		</form>
 	</div>
 </section>
-<section class="config">
+<!-- <section class="config">
 	<section class="configSect">
 		<div class="profile">
 		<p class="confTitle">Settings</p>
@@ -212,8 +142,9 @@
 		<button class="changePic">Change Profile Picture</button>
 		<button class="edit">Edit Profile Info</button>
 	</div>
-	</section>
+</section> -->
 <script src="js/mainpage.js"></script>
 <script src="js/users.js"></script>
+<script src="js/chat.js"></script>
 </body>
 </html>

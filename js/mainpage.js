@@ -19,9 +19,6 @@ $('body').animate({left: '0px'}, 200);
 $(document).ready(main);
 
 
-//----------------------------------------------------------------
-
-
 function showModalWin() {
  
  var darkLayer = document.createElement('div');
@@ -36,15 +33,4 @@ function showModalWin() {
 	 modalWin.style.display = 'none';
 	 return false;
  };
-}
-
-
-//--------------------------------------------------------------
-
-
-const searchBar = document.querySelector(".mainApp .search input"),
-serchBtn = document.querySelector(".mainApp .search i");
-
-serchBtn.onclick = ()=>{
-    searchBar.focus();
 }
